@@ -66,6 +66,8 @@ char	*get_next_line(int fd)
 	if (tr == NULL)
 		return (NULL);
 	line = extract_line(&tr);
+	if(line == NULL)
+		free(tr);
 	return (line);
 }
 int	main(void)
