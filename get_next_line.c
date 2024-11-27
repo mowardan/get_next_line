@@ -5,9 +5,11 @@ char	*read_line(int fd, char *str)
 	char	*buffer;
 	ssize_t	read_bytes;
 
+	if (BUFFER_SIZE <= 0)
+		return (NULL);
 	buffer = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buffer)
-		return (free(buffer), NULL);
+		return (NULL);
 	if (str == NULL)
 	{
 		str = malloc(1);
@@ -67,7 +69,10 @@ char	*get_next_line(int fd)
 		return (NULL);
 	line = extract_line(&tr);
 	if(line == NULL)
+	{
 		free(tr);
+		tr = 0;
+	}
 	return (line);
 }
 int	main(void)
