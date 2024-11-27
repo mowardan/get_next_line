@@ -1,31 +1,31 @@
 #include "get_next_line.h"
 
-size_t ft_strlen(const char *s)
+size_t	ft_strlen(const char *s)
 {
-	size_t i;
+	size_t	i;
 
 	i = 0;
-	while(s[i])
+	while (s[i])
 	{
 		i++;
 	}
-	return(i);
+	return (i);
 }
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-	size_t i;
-	char *str;
+	size_t	i;
+	char	*str;
 
 	i = 0;
 	str = (char *)s;
-	while(str[i])
+	while (str[i])
 	{
-		if(str[i] == (const char)c)
+		if (str[i] == (const char)c)
 			return (&str[i]);
 		i++;
 	}
-	if(str[i] == (const char)c)
-			return (&str[i]);
+	if (str[i] == (const char)c)
+		return (&str[i]);
 	return (NULL);
 }
 char	*ft_strjoin(const char *s1, const char *s2)
