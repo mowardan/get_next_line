@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mowardan <mowardan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/27 22:15:07 by mowardan          #+#    #+#             */
-/*   Updated: 2024/11/28 17:05:00 by mowardan         ###   ########.fr       */
+/*   Created: 2024/11/28 16:49:32 by mowardan          #+#    #+#             */
+/*   Updated: 2024/11/28 17:08:04 by mowardan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "get_next_line.h"
+#include "get_next_line_bonus.h"
 
 char	*read_line(int fd, char *str)
 {
@@ -70,19 +70,19 @@ char	*extract_line(char **str)
 
 char	*get_next_line(int fd)
 {
-	static char	*str;
+	static char	*str[1024];
 	char		*line;
 
 	if (fd < 0 || BUFFER_SIZE <= 0)
 		return (NULL);
-	str = read_line(fd, str);
-	if (str == NULL)
+	str[fd] = read_line(fd, str[fd]);
+	if (str[fd] == NULL)
 		return (NULL);
-	line = extract_line(&str);
+	line = extract_line(&str[fd]);
 	if (line == NULL)
 	{
-		free(str);
-		str = 0;
+		free(str[fd]);
+		str[fd] = 0;
 	}
 	return (line);
 }
