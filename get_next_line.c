@@ -6,7 +6,7 @@
 /*   By: mowardan <mowardan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/27 22:15:07 by mowardan          #+#    #+#             */
-/*   Updated: 2024/11/28 17:05:00 by mowardan         ###   ########.fr       */
+/*   Updated: 2024/11/30 14:45:04 by mowardan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,7 +92,7 @@ char	*get_next_line(int fd)
 // 	int		fd;
 // 	char	*a;
 
-// 	fd = open("amine.txt", O_RDONLY);
+// 	fd = open("a.txt", O_RDONLY);
 // 	while ((a = get_next_line(fd)) != NULL)
 // 	{
 // 		printf("%s", a);

@@ -6,7 +6,7 @@
 /*   By: mowardan <mowardan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:49:45 by mowardan          #+#    #+#             */
-/*   Updated: 2024/11/28 17:07:24 by mowardan         ###   ########.fr       */
+/*   Updated: 2024/11/29 09:41:43 by mowardan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define GET_NEXT_LINE_BONUS_H
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 1337
+#  define BUFFER_SIZE 42
 # else
 #  if BUFFER_SIZE <= 0
 #   undef BUFFER_SIZE
@@ -28,6 +28,7 @@
 # include <string.h>
 # include <unistd.h>
 
+char	*get_next_line(int fd);
 size_t	ft_strlen(const char *s);
 char	*ft_strchr(const char *s, int c);
 char	*ft_strjoin(const char *s1, const char *s2);

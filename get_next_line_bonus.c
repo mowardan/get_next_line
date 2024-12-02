@@ -6,7 +6,7 @@
 /*   By: mowardan <mowardan@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/28 16:49:32 by mowardan          #+#    #+#             */
-/*   Updated: 2024/11/28 17:08:04 by mowardan         ###   ########.fr       */
+/*   Updated: 2024/11/30 14:53:24 by mowardan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,16 +86,20 @@ char	*get_next_line(int fd)
 	}
 	return (line);
 }
-
 // int	main(void)
 // {
 // 	int		fd;
+// 	int		fd1;
 // 	char	*a;
+// 	char	*b;
 
-// 	fd = open("amine.txt", O_RDONLY);
-// 	while ((a = get_next_line(fd)) != NULL)
+// 	fd = open("ami.txt", O_RDONLY);
+// 	fd1 = open("a.txt", O_RDONLY);
+// 	while ((a = get_next_line(fd)) != NULL && (b = get_next_line(fd1)) != NULL)
 // 	{
 // 		printf("%s", a);
+// 		printf("%s", b);
+// 		free(b);
 // 		free(a);
 // 	}
 // }
